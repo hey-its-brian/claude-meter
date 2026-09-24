@@ -1,0 +1,59 @@
+name: ClaudeMeter
+options:
+  bundleIdPrefix: com.heyitsbrian
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    DEVELOPMENT_TEAM: 54U9L6YAF4
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_HARDENED_RUNTIME: YES
+targets:
+  ClaudeMeter:
+    type: application
+    platform: macOS
+    sources:
+      - App
+      - Shared
+    dependencies:
+      - target: ClaudeMeterWidget
+    entitlements:
+      path: App/ClaudeMeter.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - $(TeamIdentifierPrefix)com.heyitsbrian.claudemeter
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: ClaudeMeter
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.developer-tools
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.heyitsbrian.claudemeter
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+  ClaudeMeterWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - Widget
+      - Shared
+    entitlements:
+      path: Widget/ClaudeMeterWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.application-groups:
+          - $(TeamIdentifierPrefix)com.heyitsbrian.claudemeter
+    info:
+      path: Widget/Info.plist
+      properties:
+        CFBundleDisplayName: ClaudeMeter
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.heyitsbrian.claudemeter.widget
