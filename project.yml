@@ -30,6 +30,8 @@ targets:
       path: App/Info.plist
       properties:
         CFBundleDisplayName: ClaudeMeter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSUIElement: true
         LSApplicationCategoryType: public.app-category.developer-tools
     settings:
@@ -52,6 +54,8 @@ targets:
       path: Widget/Info.plist
       properties:
         CFBundleDisplayName: ClaudeMeter
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
