@@ -26,7 +26,7 @@ It reads the same numbers Claude Code's `/usage` command shows.
 
 Download `ClaudeMeter.zip` from the [latest release](../../releases/latest), unzip it, and move `ClaudeMeter.app` to `/Applications`. Open it, then add the widget: right-click the desktop, choose **Edit Widgets**, and search for **Claude Usage**.
 
-> The release build is signed with a development certificate but not notarized. If macOS blocks it, right-click the app and choose **Open**, or allow it under **System Settings > Privacy & Security**. Building from source avoids this.
+Release builds are signed with a Developer ID certificate and notarized by Apple, so they open without Gatekeeper warnings.
 
 ### Build from source
 
