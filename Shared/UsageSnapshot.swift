@@ -55,7 +55,7 @@ struct UsageSnapshot: Codable, Hashable {
 
 /// Shared storage between the menu bar app (writer) and the widget (reader), via the app group container.
 enum SnapshotStore {
-    static let groupID = "54U9L6YAF4.com.heyitsbrian.claudemeter"
+    static let groupID = "L6X8U2TQ6F.com.heyitsbrian.claudemeter"
 
     private static var fileURL: URL? {
         FileManager.default

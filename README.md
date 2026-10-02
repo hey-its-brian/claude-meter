@@ -37,6 +37,12 @@ Requires Xcode and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew inst
 ./scripts/build.sh --install  # also copies to /Applications and launches it
 ```
 
+For a notarized release build (Developer ID certificate and a `notarytool` keychain profile required; setup steps are at the top of the script):
+
+```bash
+./scripts/release.sh          # archive, Developer ID export, notarize, staple -> build/release/ClaudeMeter.zip
+```
+
 The Xcode project is generated from `project.yml`. To build under your own Apple developer account, change `DEVELOPMENT_TEAM` in `project.yml` and the team prefix in `SnapshotStore.groupID` (`Shared/UsageSnapshot.swift`) so the app group matches your team.
 
 ## Authentication
